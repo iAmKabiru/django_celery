@@ -5,13 +5,11 @@ This project demonstrates how to use Celery with Redis as a message broker to si
 ## Features
 - Asynchronous email sending using Celery.
 - Redis as the message broker for task queuing.
-- Example configuration for local development.
+- Example configuration for local development using Docker Compose.
 
 ## Requirements
-- Python 3.x
-- Django
-- Celery
-- Redis
+- Docker
+- Docker Compose
 
 ## Setup Instructions
 
@@ -21,27 +19,16 @@ This project demonstrates how to use Celery with Redis as a message broker to si
     cd django_celery
     ```
 
-2. **Install Dependencies**
+2. **Start the Services**
+    Use Docker Compose to start all required services:
     ```bash
-    pip install -r requirements.txt
+    docker-compose up
     ```
 
-3. **Start Redis**
-    Ensure Redis is running locally. You can start it with:
-    ```bash
-    redis-server
+3. **Access the Application**
+    The Django development server will be available at:
     ```
-
-4. **Run Celery Worker**
-    Start the Celery worker:
-    ```bash
-    celery -A django_celery worker --loglevel=info
-    ```
-
-5. **Run the Django Server**
-    Start the Django development server:
-    ```bash
-    python manage.py runserver
+    http://localhost:8000
     ```
 
 ## License
